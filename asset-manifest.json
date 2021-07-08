@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Notas-app/static/css/main.1edf7058.chunk.css",
+    "main.js": "/Notas-app/static/js/main.3c8be4a8.chunk.js",
+    "main.js.map": "/Notas-app/static/js/main.3c8be4a8.chunk.js.map",
+    "runtime-main.js": "/Notas-app/static/js/runtime-main.253c5991.js",
+    "runtime-main.js.map": "/Notas-app/static/js/runtime-main.253c5991.js.map",
+    "static/js/2.be700fac.chunk.js": "/Notas-app/static/js/2.be700fac.chunk.js",
+    "static/js/2.be700fac.chunk.js.map": "/Notas-app/static/js/2.be700fac.chunk.js.map",
+    "index.html": "/Notas-app/index.html",
+    "static/css/main.1edf7058.chunk.css.map": "/Notas-app/static/css/main.1edf7058.chunk.css.map",
+    "static/js/2.be700fac.chunk.js.LICENSE.txt": "/Notas-app/static/js/2.be700fac.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.253c5991.js",
+    "static/js/2.be700fac.chunk.js",
+    "static/css/main.1edf7058.chunk.css",
+    "static/js/main.3c8be4a8.chunk.js"
+  ]
+}

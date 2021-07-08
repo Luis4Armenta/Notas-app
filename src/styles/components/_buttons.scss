@@ -29,6 +29,16 @@
   }
 }
 
+.btn-danger {
+  background-color: indianred;
+
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: maroon;
+  }
+}
+
 .btn-block {
   width: 100%;
 }

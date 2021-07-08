@@ -1,27 +1,46 @@
-import React from 'react'
+import React from 'react';
+import dayjs from 'dayjs';
+import { useDispatch } from 'react-redux';
+import { activeNote } from '../../actions/notes';
 
-export const JournalEntry = () => {
+const advancedFormat = require("dayjs/plugin/advancedFormat");
+dayjs.extend(advancedFormat);
+
+export const JournalEntry = ({ id, date, title, body, url }) => {
+  const day = dayjs(date);
+  const dispatch = useDispatch();
+
+  const handleEntryClick = () => {
+    dispatch(
+      activeNote(id, {
+        date, title, body, url
+      })
+    );
+  }
   return (
-    <div className="journal__entry pointer">
-      <div 
-        className="journal__entry-picture"
-        style={{
-          backgroundSize: 'cover',
-          backgroundImage: 'url(https://revistaunica.com.mx/wp-content/uploads/2020/08/ETvGTIwX0AAd-jI.jpg-large.jpg)'
-        }}
-      ></div>
+    <div className="journal__entry pointer animate__animated animate__backInRight animate__faster" onClick={ handleEntryClick }>
+      {
+        url &&
+          <div 
+            className="journal__entry-picture"
+            style={{
+              backgroundSize: 'cover',
+              backgroundImage: `url(${ url })`
+            }}
+          ></div>
+      }
 
       <div className="journal__entry-body">
         <p className="journal__entry-title">
-          Un Nuevo día
+          { title }
         </p>
         <p className="journal__entry-content">
-          Et culpa voluptate deserunt elit dolor quis Lorem laborum elit occaecat ea. 
+          { body }
         </p>
       </div>
       <div className="journal__entry-date-box">
-        <span>Monday</span>
-        <h4>28</h4>
+        <span>{ day.format('dddd') }</span>
+        <h4>{day.format("Do")}</h4>
       </div>
     </div>
   )

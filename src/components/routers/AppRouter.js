@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import firebase from 'firebase/app';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Redirect
 } from "react-router-dom";

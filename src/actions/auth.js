@@ -9,12 +9,13 @@ export const startLoginEmailPassword = (email, password) => {
   //  después de cierto proceso asincrono se dispara otro dispatch con la data obtenida
   return (dispatch) => {
     dispatch(uiStartLoading());
-    firebase.auth().signInWithEmailAndPassword(email, password)
+
+    return firebase.auth().signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        dispatch(uiFinishLoading());
         dispatch(
           login(user.uid, user.displayName)
         )
+        dispatch(uiFinishLoading());
       })
       .catch(e => {
         dispatch(uiFinishLoading());
